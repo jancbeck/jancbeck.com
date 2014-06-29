@@ -6,7 +6,7 @@
 @dark: 		mix(#666, @brand, 90%);
 @grey: 		mix(#999, @brand, 95%);
 @light:		mix(#ddd, @brand, 95%);
-@lighter:	mix(#fefefe, @brand, 95%);
+@lighter:	mix(#fafafa, @brand, 99%);
 
 @text-color: 		#333;
 @link-color: 		@brand;
@@ -183,7 +183,7 @@ dd {
 }
 hr, .hr {
 	border: none;
-	border-top: 2px solid @lighter;
+	border-top: 1px solid @lighter;
 	margin-top: 1.75em;
 	padding-bottom: 1.5em;
 	height: 0;
@@ -377,7 +377,7 @@ input {
 	.transition(border-color);
 
 	font-family: @font-heading;
-	border: 1px solid @lighter;
+	border: 1px solid @light;
 	width: 100%;
 	padding: .25em .5em;
 
@@ -453,7 +453,7 @@ body {
 	line-height: @base-line-height;
 	color: @text-color;
 	text-rendering: optimizeLegibility;
-	background-color: #fafafa;
+	background-color: @lighter;
 
 	position: relative;
 	margin: 0 auto;
@@ -530,6 +530,7 @@ article {
 	background-color: white;
 }
 [role=banner] {
+	&:extend(.text-center);
 	font-family: @font-heading;
 	margin-bottom: 1.5em;
 	padding: 25px 10px 100px;
@@ -537,10 +538,6 @@ article {
 	background-size: cover;
 	background-position: center;
 
-	&.image-cover {
-		&:extend(.text-center);
-
-	}
 	img {
 		margin-bottom: 1em;
 	}
@@ -623,14 +620,17 @@ article {
 .skip {
 	display: block;
 	text-align: center;
-	background: white;
+	background: @dark;
 	padding: 1em;
+	color: white;
 	text-transform: uppercase;
 	font-family: @font-heading;
-	border-top: 1px solid @lighter;
+	border-top: 1px solid @darker;
 
 	&:hover {
 		text-decoration: none;
+		background: @brand;
+		color: white;
 	}
 }
 

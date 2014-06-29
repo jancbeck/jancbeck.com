@@ -1,7 +1,7 @@
 <footer role="contentinfo">
 
   <form class="search-form" action="<?php echo $site->url() ?>/search/">
-    <input type="text" class="search-input" placeholder="Search site …" <?php echo( str::sanitize( isset($_GET['q']) && !empty($_GET['q']) ? 'value="'. $_GET['q'] .'"' : '' )) ?> name="q" id="search" /><br />
+    <input type="text" class="search-input" placeholder="Type to search site …" <?php echo( str::sanitize( isset($_GET['q']) && !empty($_GET['q']) ? 'value="'. $_GET['q'] .'"' : '' )) ?> name="q" id="search" /><br />
     <button class="search-submit"><i class="icon-search"></i></button>
   </form>
 
