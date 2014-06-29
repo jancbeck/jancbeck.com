@@ -9,18 +9,18 @@
 	Twitter: @bastianallgeier
 	URL: http://bastianallgeier.com/
 	From: Mannheim, Germany
-	
+
 	Niklaus Gerber
 	Twitter: @niklausgerber
 	URL: http://niklausgerber.com/
 	From: Bern, Switzerland
-	
+
 /* FONTS */
-	OpenSans by Steve Matteson
-	Specimens: http://www.google.com/fonts/specimen/Open+Sans
-	
-	
-/* SITE */	
+	PT Sans by ParaType Ltd.
+	License: http://www.fontsquirrel.com/license/PT-Sans
+
+
+/* SITE */
 	Standards: HTML, CSS
 	Doctype: HTML
 	Language: english
