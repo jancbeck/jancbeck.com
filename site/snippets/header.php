@@ -17,7 +17,7 @@
 <!-- Feed -->
 <link rel="alternate" type="application/rss+xml" href="<?php echo url('feed') ?>" title="Feed | <?php echo html($site->title()) ?>" />
 
-<link rel="canonical" href="<?php echo html($page->url()) ?>" />
+<link rel="canonical" href="http://jancbeck.com" />
 
 <?php
 
