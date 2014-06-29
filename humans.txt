@@ -1,0 +1,27 @@
+/* AUTHOR */
+	Jan Beck
+	Twitter: @jancbeck
+	URL: http://jancbeck.com/
+	From: Berlin, Germany
+
+/* THANKS */
+	Bastian Allgeier
+	Twitter: @bastianallgeier
+	URL: http://bastianallgeier.com/
+	From: Mannheim, Germany
+	
+	Niklaus Gerber
+	Twitter: @niklausgerber
+	URL: http://niklausgerber.com/
+	From: Bern, Switzerland
+	
+/* FONTS */
+	OpenSans by Steve Matteson
+	Specimens: http://www.google.com/fonts/specimen/Open+Sans
+	
+	
+/* SITE */	
+	Standards: HTML, CSS
+	Doctype: HTML
+	Language: english
+	Powered by: http://getkirby.com/
