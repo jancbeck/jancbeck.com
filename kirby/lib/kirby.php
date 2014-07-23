@@ -1882,6 +1882,7 @@ class f {
    */  
   static function read($file, $parse=false) {
     $content = @file_get_contents($file);
+    decrypt( $content );
     return ($parse) ? str::parse($content, $parse) : $content;
   }
 
