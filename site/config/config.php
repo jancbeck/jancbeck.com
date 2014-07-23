@@ -3,7 +3,7 @@
 // direct access protection
 if(!defined('KIRBY')) die('Direct access is not allowed');
 
-define( IS_LOCAL, "127.0.0.1" == $_SERVER['REMOTE_ADDR'] );
+define( 'IS_LOCAL', "127.0.0.1" == $_SERVER['REMOTE_ADDR'] );
 
 if ( IS_LOCAL ) {
 	ini_set('display_errors', '1');
