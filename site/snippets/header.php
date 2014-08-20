@@ -49,7 +49,7 @@ if ( $page->description() ) {
 
 <meta property="og:title" content="<?php echo html($page->title()) ?> | <?php echo html($site->title()) ?>" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="<?php echo html($page->url()) ?>/" />
+<meta property="og:url" content="<?php echo html($page->url()) ?>" />
 <meta property="og:image" content="<?php echo $image ?>" />
 <meta property="og:description" content="<?php echo $description ?>" />
 <meta property="og:author" content="<?php echo html($site->author()) ?>" />

@@ -51,7 +51,7 @@ c::set('url', '/');
 
 */
 
-//c::set('url', 'http://jancbeck.com');
+c::set('url', 'http://jancbeck.com');
 
 
 /*
