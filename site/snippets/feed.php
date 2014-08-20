@@ -40,7 +40,10 @@ echo '<?xml version="1.0" encoding="utf-8"?>';
       <?php endif ?>
       <?php endif ?>
 
-      <content:encoded><![CDATA[<?php echo kirbytext($item->text()) ?>]]></content:encoded>
+      <content:encoded><![CDATA[<?php echo kirbytext($item->text()) ?>
+      <!-- Piwik Image Tracker-->
+      <img src="https://jcb.virgo.uberspace.de/analytics/piwik.php?idsite=3&rec=1&action_name=<?php echo xml($item->title()) ?>" style="border:0" alt="" />
+      <!-- End Piwik -->]]></content:encoded>
 
     </item>
     <?php endforeach ?>
