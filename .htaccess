@@ -4,8 +4,12 @@ AddType font/otf .otf
 AddType application/x-font-woff .woff
 
 <IfModule mod_rewrite.c>
- RewriteCond %{REQUEST_URI} /+[^\.]+$
- RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} !^www\.
+  RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+  RewriteCond %{REQUEST_URI} /+[^\.]+$
+  RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
 </IfModule>
 
 Redirect 301 /journal/wp-meetup-chiang-mai-feb-2014/ /articles/wp-meetup-chiang-mai-feb-2014/
@@ -297,10 +301,10 @@ FileETag None
 # ----------------------------------------------------------------------
 
 # Turning on the rewrite engine is necessary for the following rules and features.
-# FollowSymLinks must be enabled for this to work.
+# SymLinksIfOwnerMatch must be enabled for this to work.
 
 <IfModule mod_rewrite.c>
-  Options +FollowSymlinks
+  Options +SymLinksIfOwnerMatch
   RewriteEngine On
 </IfModule>
 
@@ -475,7 +479,7 @@ Options -Indexes
 
 # Increase cookie security
 <IfModule php5_module>
-	php_value session.cookie_httponly true
+  php_value session.cookie_httponly true
 </IfModule>
 
 
