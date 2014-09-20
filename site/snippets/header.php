@@ -74,7 +74,7 @@ if ( $page->description() ) {
 
 	<a href="#content" class="hidden">Skip to Content</a>
 
-	<header role="banner" <?php if( $page->isHomePage() ): ?> style="background-image:url(https://lh3.googleusercontent.com/-TBiPpyns4C0/U6WkoiIWoiI/AAAAAAAACV0/NCYkD3Hw97U/w2160-h1424-no/IMG_0054_bearbeitet.jpg)" <?php endif ?>>
+	<header role="banner">
 		<a role="navigation" title="go to homepage" href="<?php echo u('/') ?>">
 			<?php if ($page->isHomePage()) : ?>
 				<img alt="A picture of me, Jan Beck" width="75" height="75" src="<?php echo url('assets/images/jan.png') ?>" /><br>
