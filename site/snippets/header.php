@@ -77,7 +77,7 @@ if ( $page->description() ) {
 	<header role="banner">
 		<a role="navigation" title="go to homepage" href="<?php echo u('/') ?>">
 			<?php if ($page->isHomePage()) : ?>
-				<img alt="A picture of me, Jan Beck" width="75" height="75" src="<?php echo url('assets/images/jan.png') ?>" /><br>
+				<img alt="A picture of me, Jan Beck" width="75" height="75" src="<?php echo url('assets/images/jan.jpg') ?>" /><br>
 			<?php endif ?>
 			<?php echo html($site->title()) ?><br>
 			<small><?php echo $site->description() ?></small>
