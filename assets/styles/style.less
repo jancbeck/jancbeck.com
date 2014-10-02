@@ -6,10 +6,10 @@
 // Layout
 
 body {
-	&:extend(.container); 
+	&:extend(.container, .px2); 
 }
 header[role='navigation'] {
-	&:extend(.py3, .mb3, .border-bottom, .h4, .center, .px2);
+	&:extend(.py3, .mb3, .border-bottom, .h4, .center);
 	a {
 		&:extend(.avenir, .caps, .bold, .mt2);
 	}
@@ -22,8 +22,11 @@ article[role='article'] {
 		&:extend(.h2);
 	} 
 }
+section[role="main"] {
+		&:extend(.mxn2);
+}
 footer[role='contentinfo'] {
-	&:extend(.py3, .mt3, .mb4, .border-top, .clearfix, .px2);
+	&:extend(.py3, .mt3, .mb4, .border-top, .clearfix);
 }
 form[role='search'] {
 	&:extend(.mb2);
