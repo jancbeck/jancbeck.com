@@ -13,10 +13,7 @@ $articles = $search->results();
 ?>
 
 <section role="main">
-	<article>
-
-		<h1>Search</h1>
-		<hr>
+	<article role="article">
 
 	<?php if ( $articles ) : ?>
 
@@ -24,7 +21,7 @@ $articles = $search->results();
 
 		<?php foreach($articles as $article): ?>
 
-			<h3 class="headline"><a href="<?php echo $article->url() ?>"><?php echo html($article->title()) ?></a></h3>
+			<h3><a href="<?php echo $article->url() ?>"><?php echo html($article->title()) ?></a></h3>
 
 		<?php endforeach; ?>
 

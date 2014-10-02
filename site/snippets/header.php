@@ -72,14 +72,13 @@ if ( $page->description() ) {
 
 <body id="top">
 
-	<a href="#content" class="hidden">Skip to Content</a>
+	<a href="#content">Skip to Content</a>
 
-	<header role="banner">
-		<a role="navigation" title="go to homepage" href="<?php echo u('/') ?>">
-			<?php if ($page->isHomePage()) : ?>
-				<img alt="A picture of me, Jan Beck" width="75" height="75" src="<?php echo url('assets/images/jan.jpg') ?>" /><br>
-			<?php endif ?>
-			<?php echo html($site->title()) ?><br>
-			<small><?php echo $site->description() ?></small>
-		</a>
+	<header role="navigation">
+		<a title="go to homepage" href="<?php echo u('/') ?>"><?php echo html($site->title()) ?></a>
+		<?php if ($parent = $page->parent()) : ?>
+			/ <a title="go to articles" href="<?php echo u('/') ?>"><?php echo html($parent->title()) ?></a>
+		<?php endif ?>
+
+		<h1><?php echo html($page->title()) ?></h1>
 	</header>

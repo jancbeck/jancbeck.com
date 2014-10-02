@@ -52,6 +52,15 @@ class kirbytextExtended extends kirbytext {
     } else {
       // we need to change this to make the image function work.
       $params['image'] = $params['figure'];
+      
+      // get metadata (url + file) for the image url
+      $imageMeta = $this->url($params['image'], $lang = false, $metadata = true);
+
+      // use half the size of retina images
+      if ( false !== strpos( $params['figure'], '@2x' ) ) {
+        $params['width'] = @getimagesize( $imageMeta['url'] )[0] / 2;
+      }
+
       $figure = $this->image( $params );
     }
     $class = empty($params['caption']) ? '' : ' class="has-caption"';
