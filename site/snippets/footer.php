@@ -1,21 +1,24 @@
 <footer role="contentinfo">
 
-  <form class="search-form" action="<?php echo $site->url() ?>/search/">
-    <input type="text" class="search-input" placeholder="Type to search site …" <?php echo( str::sanitize( isset($_GET['q']) && !empty($_GET['q']) ? 'value="'. $_GET['q'] .'"' : '' )) ?> name="q" id="search" /><br />
-    <button class="search-submit"><i class="icon-search"></i></button>
+  <nav role="navigation">
+    <ul>
+      <li><a href="http://twitter.com/jancbeck/"><i class="icon-twitter"></i> <span>Twitter</span></a></li>
+      <li><a href="http://github.com/jancbeck/"><i class="icon-github"></i> <span>Github</span></a></li>
+      <li><a href="mailto:mail@jancbeck.com"><i class="icon-mail"></i> <span>E-Mail</span></a></li>
+      <li><a href="http://jancbeck.com/feed/"><i class="icon-feed"></i> <span>Feed</span></a></li>
+    </ul>
+  </nav>
+
+  <form role="search" action="<?php echo $site->url() ?>/search/">
+    <label for="search">Search site </label>
+    <input type="text" class="field-light half-width" placeholder="Type keyword …" <?php echo( str::sanitize( isset($_GET['q']) && !empty($_GET['q']) ? 'value="'. $_GET['q'] .'"' : '' )) ?> name="q" id="search" />
+    <button class="button-blue">Go</button>
   </form>
-
-
-  <ul class="external">
-    <li><a href="http://twitter.com/jancbeck/"><i class="icon-twitter"></i> <span>Twitter</span></a></li>
-    <li><a href="http://github.com/jancbeck/"><i class="icon-github"></i> <span>Github</span></a></li>
-    <li><a href="mailto:mail@jancbeck.com"><i class="icon-mail"></i> <span>Mail</span></a></li>
-    <li><a href="http://jancbeck.com/feed/"><i class="icon-feed"></i> <span>Feed</span></a></li>
-  </ul>
+  
+  <a href="#top">To top</a>
 
 </footer>
 
-<a class="skip" href="#top">To top</a>
 
 <!-- Piwik -->
 <script type="text/javascript">
