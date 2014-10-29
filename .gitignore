@@ -1,11 +1,7 @@
 /content
-/legacy
 /site/cache
 
 *.sublime-workspace
-
 *.codekit
-
 *.codekit
-
 *.map
