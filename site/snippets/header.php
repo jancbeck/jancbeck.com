@@ -75,8 +75,8 @@ if ( $page->description() ) {
 
 	<header role="navigation">
 		<a title="go to homepage" href="<?php echo u('/') ?>"><?php echo html($site->title()) ?></a>
-		<?php if ($parent = $page->parent()) : ?>
-			/ <a title="go to articles" href="<?php echo u('/') ?>"><?php echo html($parent->title()) ?></a>
+		<?php if ('Articles' == $parent = $page->parent()->title()) : ?>
+			/ <a title="go to articles" href="<?php echo u('/') ?>"><?php echo $parent->title() ?></a>
 		<?php endif ?>
 
 		<h1><?php echo html($page->title()) ?></h1>
