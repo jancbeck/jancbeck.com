@@ -1,17 +1,18 @@
 <?php snippet('header') ?>
 
 <?php
-
-$results = $pages->find('articles')->search(get('q'));
-
+  $query = get('q');
+  $results = page('articles')
+                ->search($query, array('words' => true))
+                ->visible()->sortBy('date', 'desc')
 ?>
 
 <section role="main">
 	<article role="article">
 
-	<?php if ( $results ) : ?>
+	<?php if ( $results->count() != 0 ) : ?>
 
-		<p>Posts matching <strong><?php echo html(get('q')) ?></strong>:</p>
+		<p>Posts matching <mark><?php echo $query ?></mark>:</p>
 
 		<?php foreach( $results as $article ): ?>
 
@@ -21,7 +22,7 @@ $results = $pages->find('articles')->search(get('q'));
 
 	<?php else : ?>
 
-		<p>No posts found matching <strong><?php echo html(get('q')) ?></strong>. Try again?</p>
+		<p>No posts found matching <strong><?php echo $query ?></strong>. Try again?</p>
 
 	<?php endif ?>
 
