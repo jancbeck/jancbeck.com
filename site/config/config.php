@@ -1,15 +1,5 @@
 <?php
 
-// direct access protection
-if(!defined('KIRBY')) die('Direct access is not allowed');
-
-define( 'IS_LOCAL', "127.0.0.1" == $_SERVER['REMOTE_ADDR'] );
-
-if ( IS_LOCAL ) {
-	ini_set('display_errors', '1');
-    ini_set('error_reporting', '22527');
-}
-
 /*
 
 ---------------------------------------
@@ -34,74 +24,6 @@ c::set('license', getenv('KIRBY_LICENSE'));
 /*
 
 ---------------------------------------
-URL Setup
----------------------------------------
-
-By default kirby tries to detect the correct url
-for your site if this is set to false, but if this should fail
-or you need to set it on your own, do it like this:
-
-c::set('url', 'http://yourdomain.com');
-
-Make sure to write the url without a trailing slash.
-
-To work with relative URLs, you can set the URL like this:
-
-c::set('url', '/');
-
-*/
-
-c::set('url', 'http://jancbeck.com');
-
-
-/*
-
----------------------------------------
-Subfolder Setup
----------------------------------------
-
-Kirby will automatically try to detect the subfolder
-
-i.e. http://yourdomain.com/subfolder
-
-This might fail depending on your server setup.
-In such a case, please set the correct subfolder here.
-
-You must also set the right url then:
-
-c::set('url', 'http://yoururl.com/subfolder');
-
-if you are using the .htaccess file, make sure to
-set the right RewriteBase there as well:
-
-RewriteBase /subfolder
-
-*/
-
-c::set('subfolder', false);
-
-
-/*
-
----------------------------------------
-Rewrite URL Setup
----------------------------------------
-
-Kirby uses apache's mod_rewrite to build nice
-urls like http://yourdomain.com/about by default.
-If you can't use mod_rewrite disable rewriting here.
-Kirby will then switch to urls like this:
-
-http://yourdomain.com/index.php/about
-
-*/
-
-c::set('rewrite', true);
-
-
-/*
-
----------------------------------------
 Homepage Setup
 ---------------------------------------
 
@@ -112,23 +34,6 @@ your homepage for example. Just change it here in that case.
 */
 
 c::set('home', 'articles');
-
-
-/*
-
----------------------------------------
-Force SSL
----------------------------------------
-
-If you want to make sure to force SSL on every
-page, just set this setting to true.
-
-Also make sure to include https in your url setup:
-c::set('url', 'https://yourdomain.com');
-
-*/
-
-c::set('ssl', false);
 
 
 /*
@@ -162,6 +67,7 @@ or markdown extra: http://michelf.com/projects/php-markdown/extra/
 
 c::set('markdown.breaks', true);
 c::set('markdown.extra', true);
+c::set('smartypants', true);
 
 
 /*
@@ -185,7 +91,6 @@ disable them here
 
 c::set('tinyurl.folder', '');
 c::set('tinyurl.enabled', false);
-c::set('tinyurl.domain', 'http://jancb.de');
 
 /*
 
@@ -284,30 +189,6 @@ php errors there.
 c::set('debug', true);
 
 
-/*
-
----------------------------------------
-Your custom config file
----------------------------------------
-
-this is your custom config file for your site.
-you can set any variable here, which you want to reuse later.
-setting custom config variables works like this:
-
-c::set('yourvar', 'yourvalue');
-
-you can access them later in your code like this
-
-c::get('yourvar', 'some default value if the var is not set');
-
-please be careful with existing config rules to not
-overwrite them accidentally. Maybe just namespace them
-in doubt like:
-
-c::set('yourproject.yourvar', 'yourvalue');
-
-*/
-
 
 /*
 
@@ -375,17 +256,3 @@ c::set('lang.default', 'en');
 c::set('lang.available', array('en', 'de'));
 c::set('lang.detect', true);
 
-
-/*
-
----------------------------------------
-Content File Extension
----------------------------------------
-
-Change the default file extension for your
-content files here if you'd rather use something
-else than txt. For example md or mdown.
-
-*/
-
-c::set('content.file.extension', 'txt');
