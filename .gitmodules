@@ -1,6 +1,3 @@
-[submodule "assets/styles/basscss"]
-	path = assets/styles/basscss
-	url = https://github.com/jxnblk/basscss.git
 [submodule "kirby"]
 	path = kirby
 	url = https://github.com/getkirby/kirby.git
