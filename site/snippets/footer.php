@@ -11,7 +11,7 @@
 
   <form role="search" action="<?php echo $site->url() ?>/search/">
     <label for="search">Search site </label>
-    <input type="text" class="field-light half-width" placeholder="Type keyword …" <?php echo( str::sanitize( isset($_GET['q']) && !empty($_GET['q']) ? 'value="'. $_GET['q'] .'"' : '' )) ?> name="q" id="search" />
+    <input type="text" class="field-light half-width" placeholder="Type keyword …" value="<?php echo( get('q')) ?>" name="q" id="search" />
     <button class="button-blue">Go</button>
   </form>
   
