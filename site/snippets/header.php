@@ -60,7 +60,6 @@ if ( $page->description() ) {
 
 <!-- Styles -->
 <link rel="stylesheet" href="/assets/styles/style.css"/>
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:400,700|PT+Mono|PT+Serif:400,700,400italic">
 
 <!-- Favicons -->
 <link rel="shortcut icon" href="<?php echo url('assets/images/icons/favicon.ico') ?>" />
