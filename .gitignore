@@ -2,10 +2,6 @@
 /legacy
 /site/cache
 
-*.sublime-workspace
-
-*.codekit
-
-*.codekit
-
-*.map
+.sublime-workspace
+config.codekit
+.map
