@@ -2,6 +2,5 @@
 /site/cache
 
 *.sublime-workspace
-*.codekit
-*.codekit
+config.codekit
 *.map
