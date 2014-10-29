@@ -132,10 +132,8 @@ c::set('cache.ignore', array('search', 'some/other/uri/to/ignore'));
 
 */
 
-c::set('cache', false);
-c::set('cache.autoupdate', true);
-c::set('cache.data', true);
-c::set('cache.html', true);
+c::set('cache', true);
+c::set('cache.driver', 'apc');
 c::set('cache.ignore', array('search', 'sitemap'));
 
 
@@ -186,73 +184,23 @@ php errors there.
 
 */
 
-c::set('debug', true);
-
-
+c::set('debug', false);
 
 /*
 
----------------------------------------
-Custom host setup
----------------------------------------
-
-I've added a nice way to add different
-config files for different environments
-
-Let's say you run a development version of your
-site at http://dev.yoursite.com and a production
-version of your site at http://yoursite.com, you
-can easily setup two different config files
-by adding two more files in this directory and name them
-like this:
-
-config.dev.yoursite.com.php
-config.yoursite.com.php
-
-What happens is, that this global config.php
-will be loaded first and afterwards only the
-config file for the matching hostname will be
-attached. So you can easily overwrite your global
-custom config by specific rules for that host.
-
-*/
-
-
-/*
 
 ---------------------------------------
-Multi-Language support setup
+Languages
 ---------------------------------------
 
-If you want to run a site with multiple languages,
-enable support for it here. As soon as you set
-
-c::set('lang.support', true);
-
-Kirby will automatically create language-dependent
-URLs like:
-
-http://yourdomain.com/en/blog
-
-or
-
-http://yourdomain.com/de/blog
-
-Make sure to set the default language code and
-also the available language codes.
-
-If you keep…
-
-c::set('lang.detect', true);
-
-Kirby will try to detect the default language
-from the user agent string instead of using the
-default language.
-
-*/
-
-c::set('lang.support', false);
-c::set('lang.default', 'en');
-c::set('lang.available', array('en', 'de'));
-c::set('lang.detect', true);
+ */
+c::set('languages', array(
+  array(
+    'code'    => 'en',
+    'name'    => 'English',
+    'default' => true,
+    'locale'  => 'en_US',
+    'url'     => '/',
+  )
+));
 
