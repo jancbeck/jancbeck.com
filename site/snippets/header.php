@@ -59,7 +59,7 @@ if ( $page->description() ) {
 <meta itemprop="description" content="<?php echo $description ?>">
 
 <!-- Styles -->
-<link rel="stylesheet" href="/assets/styles/style.css"/>
+<link rel="stylesheet" href="<?php echo url('/assets/styles/style.css') ?>"/>
 
 <!-- Favicons -->
 <link rel="shortcut icon" href="<?php echo url('assets/images/icons/favicon.ico') ?>" />
