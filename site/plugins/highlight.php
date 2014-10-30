@@ -2,6 +2,38 @@
 
 require_once('highlight/geshi.php');
 
+kirbytext::$pre[] = function($kirbytext, $value) {
+
+  return preg_replace_callback('!```(.*?)```!is', 'parseCode', $value);
+
+};
+
+function parseCode($code) {
+    
+    $code = @$code[1];
+    $lines = explode("\n", $code);
+    $first = trim(array_shift($lines));
+    $code  = implode("\n", $lines);
+    $code  = trim($code);
+
+    if(function_exists('highlight')) {
+      $result  = '<pre class="highlight ' . $first . '">';
+      $result .= '<code>';
+      $result .= highlight($code, (empty($first)) ? 'php-html' : $first);
+      $result .= '</code>';
+      $result .= '</pre>';
+    } else {
+      $result  = '<pre class="' . $first . '">';
+      $result .= '<code>';
+      $result .= htmlspecialchars($code);
+      $result .= '</code>';
+      $result .= '</pre>';
+    }
+    
+    return $result;
+    
+  }
+
 function highlight($code, $lang) {
 
   if($lang == 'php-html') {
@@ -15,10 +47,10 @@ function highlight($code, $lang) {
   $code  = $geshi->parse_code();
   return '<span class="' . $lang . '">' . $code . '</span>';
 
-}
+};
 
 function smartHighlight($code) {
-  
+
   // find all php stuff
   preg_match_all('!\<\?.*?\?\>!i', $code, $array);
     
@@ -33,7 +65,7 @@ function smartHighlight($code) {
   }
 
   // now highlight the plain html  
-  $code = highlight($code, 'html');
+  $code = highlight($code, 'html5');
         
   // put the highlighted php back in  
   foreach($php as $key => $p) {
