@@ -2,7 +2,7 @@
 	Jan Beck
 	Twitter: @jancbeck
 	URL: http://jancbeck.com/
-	From: Berlin, Germany
+	From: Freiburg, Germany
 
 /* THANKS */
 	Bastian Allgeier
@@ -10,18 +10,8 @@
 	URL: http://bastianallgeier.com/
 	From: Mannheim, Germany
 
-	Niklaus Gerber
-	Twitter: @niklausgerber
-	URL: http://niklausgerber.com/
-	From: Bern, Switzerland
-
-/* FONTS */
-	PT Sans by ParaType Ltd.
-	License: http://www.fontsquirrel.com/license/PT-Sans
-
-
 /* SITE */
 	Standards: HTML, CSS
-	Doctype: HTML
+	Doctype: HTML5
 	Language: english
 	Powered by: http://getkirby.com/

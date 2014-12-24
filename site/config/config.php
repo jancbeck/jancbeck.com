@@ -33,7 +33,7 @@ your homepage for example. Just change it here in that case.
 
 */
 
-c::set('home', 'articles');
+c::set('home', 'home');
 
 
 /*

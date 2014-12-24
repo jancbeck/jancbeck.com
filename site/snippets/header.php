@@ -1,14 +1,12 @@
 <!doctype html>
-<html itemscope itemtype="http://schema.org/" class="no-js">
+<html itemscope itemtype="http://schema.org/">
 <head>
 <meta charset="utf-8" />
 <title><?php echo html($page->title()) ?> | <?php echo html($site->title()) ?></title>
 
-<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement) /* removes no-js class */</script>
-
 <meta name="apple-mobile-web-app-title" content="<?php echo html($site->title()) ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<meta http-equiv="content-language" content="en" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+<meta http-equiv="content-language" content="<?php echo $site->language() ?>" />
 <meta http-equiv="imagetoolbar" content="no" />
 
 <!-- Please support http://humanstxt.org/ -->
@@ -17,11 +15,11 @@
 <!-- Feed -->
 <link rel="alternate" type="application/rss+xml" href="<?php echo url('feed') ?>" title="Feed | <?php echo html($site->title()) ?>" />
 
-<link rel="canonical" href="http://jancbeck.com" />
+<link rel="canonical" href="//jancbeck.com" />
 
 <?php
 
-$image = $page->hasImages() ? $page->images()->first()->url() : url('assets/images/icons/facebook/facebook-icon-1500x1500.jpg');
+$image = $page->hasImages() ? $page->images()->first()->url() : '/favicon-192x192.png';
 
 if ( $page->description() ) {
     $description = $page->description();
@@ -76,7 +74,7 @@ if ( $page->description() ) {
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
 <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 </head>
 
@@ -84,11 +82,10 @@ if ( $page->description() ) {
 
 	<a href="#content">Skip to Content</a>
 
-	<header role="navigation">
-		<a title="go to homepage" href="<?php echo u('/') ?>"><?php echo html($site->title()) ?></a>
-		<?php if ('Articles' == $parent = $page->parent()->title()) : ?>
-			/ <a title="go to articles" href="<?php echo u('/') ?>"><?php echo $parent->title() ?></a>
-		<?php endif ?>
+	<header role="banner">
+		<h1><a title="go to homepage" href="<?php echo u('/') ?>"><?php echo html($site->title()) ?></a></h1>
 
-		<h1><?php echo html($page->title()) ?></h1>
+		<?php if ( $page->isHomePage() ) : ?>
+			<?php echo $site->description() ?>
+		<?php endif ?>
 	</header>
