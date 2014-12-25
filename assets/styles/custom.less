@@ -10,7 +10,6 @@ header {
 	margin-bottom: 4rem;
 	box-sizing: border-box;
 
-
 	.home & {
 		padding: 8rem 4rem;
 		min-height: 100vh;
@@ -46,8 +45,10 @@ header {
 		margin-right: 2em;
 		font-size: 80%;
 
-		display: block;
-		margin-bottom: 1em;
+		@media (min-width: 1180px) {
+			display: block;
+			margin-bottom: 1em;
+		}
 	}
 	[class^="icon-"], [class*=" icon-"] {
 		margin-right: .5em;
@@ -75,6 +76,7 @@ section {
 		background-color: white;
 		margin-top: -1px;
 		border: 1px solid #eee;
+		padding: 20px;
 		padding: 5vw;
 		margin-bottom: 4rem;
 
