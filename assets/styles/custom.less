@@ -1,0 +1,145 @@
+body {
+	background-color: #fafafa;
+}
+
+header {
+	color: white;
+	font-size: 150%;
+	background-color: #1EAEDB;
+	padding: 1rem;
+	margin-bottom: 4rem;
+	box-sizing: border-box;
+
+
+	.home & {
+		padding: 8rem 4rem;
+		min-height: 100vh;
+	}
+
+	h1 {
+		margin-bottom: 1em;
+
+		.home & {
+			margin-top: 10vh;
+		}
+
+		.site & {
+			margin-bottom: 0;
+		}
+	}
+
+	p {
+		margin-bottom: 2em;
+	}
+	a {
+		text-decoration: none;
+		color: fade(white, 75%);
+		&:hover, &:focus {
+			color: fade(black, 50%);
+		}
+		transition: color .5s;
+	}
+	small a {
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: .1em;
+		margin-right: 2em;
+		font-size: 80%;
+
+		display: block;
+		margin-bottom: 1em;
+	}
+	[class^="icon-"], [class*=" icon-"] {
+		margin-right: .5em;
+		font-size: 120%;
+		vertical-align: text-top;
+	}
+}
+
+/* Larger than tablet */
+@media (min-width: 1180px) {
+	.home {
+		padding-left: 30%;
+
+		header {
+			position: fixed;
+			width: 30%;
+			left: 0;
+		}
+	}
+}
+
+section {
+
+	body > & {
+		background-color: white;
+		margin-top: -1px;
+		border: 1px solid #eee;
+		padding: 5vw;
+		margin-bottom: 4rem;
+
+		/* Larger than tablet */
+		@media (max-width: 500px) {
+			width: 100%;
+		}
+	}
+	&:extend( .container all );
+
+	p:first-of-type {
+		font-size: 130%;
+	}
+
+	h2 {
+		text-align: center;
+	}
+
+	figure {
+		text-align: center;
+		margin: 1em -5vw;
+	}
+	figcaption {
+		font-style: italic;
+		color: #aaa;
+		margin-top: 1em;
+	}
+}
+
+footer {
+	text-align: center;
+}
+
+[class^="icon-"], [class*=" icon-"] { 
+	text-decoration: none;
+}
+
+img {
+	&:extend( .u-max-full-width all );
+}
+
+.highlight br {
+	display: none;
+}
+
+/* Solarized (Dark) */
+// https://github.com/kpumuk/codecolorer
+
+.highlight .co0, .highlight .co1, .highlight .co2, .highlight .co3, .highlight .co4, .highlight .coMULTI
+	{ color: #97B8C3; }
+.highlight .nu0, .highlight .re3
+	{ color: #269186; }
+.highlight .st0, .highlight .st_h, .highlight .es0, .highlight .es1
+	{ color: #269186; }
+.highlight .me1, .highlight .me2
+	{ color: #748B00; }
+.highlight .kw1, .highlight .kw2, .highlight .sy1
+	{ color: #859900; }
+.highlight .kw3, .highlight .kw4, .highlight .kw5, .highlight .re2
+	{ color: #A57800; }
+.highlight .re0, .highlight .re1
+	{ color: #268BD2; }
+.highlight .br0,  .highlight .sy0
+	{ color: #D01F1E; }
+.xml .re1
+	{ color: #6E9CBE; }
+.xml .re0
+	{ color: #6D9CBE; }

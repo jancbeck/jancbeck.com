@@ -78,14 +78,21 @@ if ( $page->description() ) {
 <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 </head>
 
-<body id="top">
-
-	<a href="#content">Skip to Content</a>
+<body id="top" class="<?php echo $page->isHomePage() ? 'home' : 'site' ?>">
 
 	<header role="banner">
-		<h1><a title="go to homepage" href="<?php echo u('/') ?>"><?php echo html($site->title()) ?></a></h1>
+		<section>
+			<h1><a title="go to homepage" href="<?php echo u('/') ?>"><?php echo html($site->title()) ?></a></h1>
 
 		<?php if ( $page->isHomePage() ) : ?>
-			<?php echo $site->description() ?>
+			<p><?php echo $site->description()->html() ?></p>
+			<p><small>
+				<a href="mailto:<?php echo html($site->email()) ?>"><span class="icon-email"></span> E-Mail</a>
+				<a href="https://github.com/<?php echo html($site->github()) ?>"><span class="icon-github"></span> Github</a>
+				<a href="skype://<?php echo html($site->skype()) ?>"><span class="icon-skype"></span> Skype</a>
+				<a href="https://dribbble.com/<?php echo html($site->dribbble()) ?>"><span class="icon-dribbble"></span> dribbble</a>
+			</small></p>
 		<?php endif ?>
+
+		</section>
 	</header>

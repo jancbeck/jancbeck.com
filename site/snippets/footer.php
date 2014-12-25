@@ -1,7 +1,7 @@
-<footer role="contentinfo">
-	
-	<a href="#top">To top</a>
-
+<footer>
+	<section>
+		<p><small>Powered by <a href="http://getkirby.com/">kirby</a> • Hosted by <a href="http://uberspace.de/">uberspace</a></small></p>
+	</section>
 </footer>
 
 <!-- Piwik -->

@@ -4,6 +4,7 @@
 
 	<!--Article-->
 	<article role="article">
+		<h2><?php echo kirbytext($page->title()); ?></h2>
 		<?php echo kirbytext($page->text()); ?>
 		<p>
 			<em>Written by <?php echo html($site->googleauthor()) ?> on 
