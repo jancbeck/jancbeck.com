@@ -15,6 +15,8 @@
 
   </ul>
 
-  <p><a href="<?php echo url('feed') ?>" class="button"> <span class="icon-feed"></span> Feed</a></p>
+  <footer>
+    <a href="<?php echo url('feed') ?>" class="button"> <span class="icon-feed"></span> Article Feed</a>
+  </footer>
 
 </section>

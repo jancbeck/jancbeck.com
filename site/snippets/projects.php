@@ -7,6 +7,8 @@
 		</figure>
 		<h3><?php echo $project->title()->html() ?></h3>
 		<p><?php echo $project->text()->html() ?></p>
-		<p><a class="button" href="<?php echo $project->link()->html() ?>">Website link <span class="icon-external"></span></a></p>
+		<footer>
+			<a class="button" href="<?php echo $project->link()->html() ?>">Website link <span class="icon-external"></span></a>
+		</footer>
 	<?php endforeach ?>
 </section>
