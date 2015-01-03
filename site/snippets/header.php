@@ -58,6 +58,9 @@ if ( $page->description() ) {
 
 <!-- Styles -->
 <link rel="stylesheet" href="<?php echo url('/assets/styles/style.css') ?>"/>
+<?php if ( $stylesheet = $page->files()->find( $page->id(). '.css' ) ) : ?>
+	<link rel="stylesheet" href="<?php echo $stylesheet->url() ?>"/>
+<?php endif ?>
 
 <!-- Favicons -->
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
