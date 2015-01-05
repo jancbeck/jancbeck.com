@@ -3,9 +3,9 @@ body {
 }
 
 h2 {
-	@media (min-width: 550px)
+	@media (min-width: 550px) {
 		font-size: 3.5rem;
-	}		
+	}
 	font-size: 3.2rem;
 }
 h3 {
@@ -160,3 +160,12 @@ img {
 	{ color: #6E9CBE; }
 .xml .re0
 	{ color: #6D9CBE; }
+
+@media print {
+	body > section {
+		border: none;
+	}
+	footer {
+		display: none;
+	}
+}
