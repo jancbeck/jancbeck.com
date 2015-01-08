@@ -21,14 +21,16 @@
 
 $image = $page->hasImages() ? $page->images()->first()->url() : '/favicon-192x192.png';
 
-if ( $page->description() ) {
-    $description = $page->description();
-} elseif ( $page->text() ) {
-    $text = kirbytext($page->text());
-    $description = substr( $text, 0, strpos( $text, '</p>' ) + 4 );
-    $description = strip_tags( $description );
-} else {
-    $description = $site->description();
+// get the description of the page
+if ( ! $description = (string) $page->description()->kirbytext() ) {
+	// if there is no description, get the first paragraph of the article
+	if ( $text = (string) $page->text()->kirbytext() ) {
+	    $description = substr( $text, 0, strpos( $text, '</p>' ) + 4 );
+	    $description = strip_tags( $description );
+	} else {
+		// if there is neither a page description nor first article, get the site description
+	    $description = $site->description();
+	}
 }
 
 ?>
