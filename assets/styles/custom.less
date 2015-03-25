@@ -19,7 +19,7 @@ h3 {
 header {
 	color: white;
 	font-size: 150%;
-	background-color: #1EAEDB;
+	background-color: #212A2D;
 	padding: 1rem;
 	box-sizing: border-box;
 	position: relative;
@@ -32,24 +32,31 @@ header {
 
 	h1 {
 		margin-bottom: 1em;
+		text-transform: uppercase;
+		font-weight: normal;
+		a {
+			color: white;
+		}
 
 		.home & {
 			margin-top: 10vh;
 		}
 
 		.site & {
+			text-align: center;
 			margin-bottom: 0;
 		}
 	}
 
 	p {
 		margin-bottom: 2em;
+		color: fade(white, 60%);
 	}
 	a {
 		text-decoration: none;
-		color: fade(white, 75%);
+		color: fade(white, 60%);
 		&:hover, &:focus {
-			color: fade(black, 50%);
+			color: white;
 		}
 		transition: color .5s;
 	}
