@@ -1,10 +1,17 @@
 body {
-	background-color: #fafafa;
+	background-color: #F5F5F5;
 	font-size: 1.85em;
 }
 
 .container {
 	max-width: 1280px;
+}
+
+a {
+    color: #1787A9;
+    &:hover, &:focus {
+	    color: #1EAEDB;
+	}
 }
 
 h2 {
@@ -28,6 +35,10 @@ h6 {
 	color: #888;
 }
 
+.list-unstyled {
+	list-style: none;
+}
+
 header {
 	color: white;
 	font-size: 150%;
@@ -36,6 +47,7 @@ header {
 	box-sizing: border-box;
 	position: relative;
 	z-index: 1;
+	text-shadow: 0 1px 0px black;
 
 	.home & {
 		padding: 8rem 0rem;
@@ -109,10 +121,11 @@ section {
 	body > & {
 		background-color: white;
 		margin-top: -1px;
-		border: 1px solid #eee;
+		border: 1px solid #E5E5E5;
 		padding: 20px;
 		padding: 5vw 10vw;
 		margin-bottom: 4rem;
+		box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.02);
 
 		/* Larger than tablet */
 		@media (max-width: 500px) {
@@ -148,6 +161,7 @@ section {
 footer {
 	text-align: center;
 	color: #888;
+	text-shadow: 0 1px 0px white;
 }
 
 [class^="icon-"], [class*=" icon-"] { 
@@ -157,6 +171,9 @@ footer {
 img {
 	&:extend( .u-max-full-width all );
 	height: auto;
+}
+.error-site {
+	text-align: center;
 }
 
 .highlight br {
