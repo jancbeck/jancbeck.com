@@ -3,7 +3,7 @@
   <h2><?php echo $data->title()->html() ?></h2>
   <?php echo $data->text()->kirbytext() ?>
 
-  <ul>
+  <ul class="list-unstyled">
 
   <?php foreach($data->children()->visible()->flip() as $article): ?>
 
