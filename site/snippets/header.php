@@ -1,22 +1,3 @@
-<!doctype html>
-<html itemscope itemtype="http://schema.org/">
-<head>
-<meta charset="utf-8" />
-<title><?php echo html( ( $page->isHomePage() ? '' : $page->title() . ' | ' ) . $site->title() ) ?></title>
-
-<meta name="apple-mobile-web-app-title" content="<?php echo html($site->title()) ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-<meta http-equiv="content-language" content="<?php echo $site->language() ?>" />
-<meta http-equiv="imagetoolbar" content="no" />
-
-<!-- Please support http://humanstxt.org/ -->
-<link type="text/plain" rel="author" href="<?php echo url('humans.txt') ?>" />
-
-<!-- Feed -->
-<link rel="alternate" type="application/rss+xml" href="<?php echo url('feed') ?>" title="Feed | <?php echo html($site->title()) ?>" />
-
-<link rel="canonical" href="//jancbeck.com" />
-
 <?php
 
 $image = $page->hasImages() ? $page->images()->first()->url() : '/favicon-192x192.png';
@@ -31,9 +12,26 @@ if ( ! $description = (string) $page->description()->kirbytext() ) {
 		// if there is neither a page description nor first article, get the site description
 	    $description = $site->description();
 	}
-}
+} ?>
+<!doctype html>
+<html itemscope itemtype="http://schema.org/">
+<head>
+<meta charset="utf-8" />
+<title><?php echo html( $page->isHomePage() ? $site->title() . ' | '. $description : $page->title() . ' | ' . $site->title() ) ?></title>
 
-?>
+<meta name="apple-mobile-web-app-title" content="<?php echo html($site->title()) ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+<meta http-equiv="content-language" content="<?php echo $site->language() ?>" />
+<meta http-equiv="imagetoolbar" content="no" />
+
+<!-- Please support http://humanstxt.org/ -->
+<link type="text/plain" rel="author" href="<?php echo url('humans.txt') ?>" />
+
+<!-- Feed -->
+<link rel="alternate" type="application/rss+xml" href="<?php echo url('feed') ?>" title="Feed | <?php echo html($site->title()) ?>" />
+
+<link rel="canonical" href="//jancbeck.com" />
+
 <meta name="title" content="<?php echo html($page->title()) ?> | <?php echo html($site->title()) ?>" />
 <meta name="author" content="<?php echo html($site->author()) ?>" />
 <meta name="publisher" content="<?php echo html($site->author()) ?>" />
@@ -59,10 +57,11 @@ if ( ! $description = (string) $page->description()->kirbytext() ) {
 <meta itemprop="description" content="<?php echo $description ?>">
 
 <!-- Styles -->
-<link rel="stylesheet" href="<?php echo url('/assets/styles/style.css') ?>"/>
-<?php if ( $stylesheet = $page->files()->find( $page->id(). '.css' ) ) : ?>
-	<link rel="stylesheet" href="<?php echo $stylesheet->url() ?>"/>
-<?php endif ?>
+<?php echo css('/assets/styles/style.css');
+// page specific css
+if ( $stylesheet = $page->files()->find( $page->id(). '.css' ) ) :
+	echo css( $stylesheet->url() );
+endif ?>
 
 <!-- Favicons -->
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
