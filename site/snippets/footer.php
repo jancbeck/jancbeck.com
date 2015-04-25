@@ -17,7 +17,7 @@
 		g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
 	})();
 </script>
-<noscript><p><img src="//jcb.virgo.uberspace.de/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<noscript><p><img src="//jcb.virgo.uberspace.de/analytics/piwik.php?idsite=1" style="border:0;" alt="Piwik Tracking Pixel" /></p></noscript>
 <!-- End Piwik Code -->
 
 
