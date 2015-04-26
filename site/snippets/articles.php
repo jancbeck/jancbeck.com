@@ -3,12 +3,13 @@
   <h2><?php echo $data->title()->html() ?></h2>
   <?php echo $data->text()->kirbytext() ?>
 
-  <ul class="list-unstyled">
+  <ul class="list-unstyled" itemscope itemtype="http://schema.org/Blog">
 
   <?php foreach($data->children()->visible()->flip() as $article): ?>
 
-  <li>
-    <a href="<?php echo $article->url() ?>"><?php echo $article->title()->html() ?></a>
+  <li itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+    <a href="<?php echo $article->url() ?>" itemprop="headline"><?php echo $article->title()->html() ?></a>
+    <meta itemprop="datePublished" content="<?php echo html( $page->date('c') ) ?>"/>
   </li>
 
   <?php endforeach ?>

@@ -1,5 +1,6 @@
 <?php
 
+// get the main image
 $image = $page->hasImages() ? $page->images()->first()->url() : '/favicon-192x192.png';
 
 // get the description of the page
@@ -12,12 +13,17 @@ if ( ! $description = (string) $page->description()->kirbytext() ) {
 		// if there is neither a page description nor first article, get the site description
 	    $description = $site->description();
 	}
-} ?>
+}
+
+// get the page title
+$title = $page->isHomePage() ? $site->title() . ' | '. $description : $page->title() . ' | ' . $site->title();
+
+ ?>
 <!doctype html>
-<html itemscope itemtype="http://schema.org/" lang="<?php echo $site->language() ?>">
+<html itemscope itemtype="http://schema.org/WebPage" lang="<?php echo $site->language() ?>">
 <head>
 <meta charset="utf-8" />
-<title><?php echo html( $page->isHomePage() ? $site->title() . ' | '. $description : $page->title() . ' | ' . $site->title() ) ?></title>
+<title><?php echo html( $title ) ?></title>
 
 <meta name="apple-mobile-web-app-title" content="<?php echo html($site->title()) ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
@@ -30,20 +36,20 @@ if ( ! $description = (string) $page->description()->kirbytext() ) {
 
 <link rel="canonical" href="//jancbeck.com" />
 
-<meta name="title" content="<?php echo html($page->title()) ?> | <?php echo html($site->title()) ?>" />
+<meta name="title" content="<?php echo $title ?>" />
 <meta name="author" content="<?php echo html($site->author()) ?>" />
 <meta name="publisher" content="<?php echo html($site->author()) ?>" />
 <meta name="copyright" content="<?php echo html($site->author()) ?>" />
 <meta name="description" content="<?php echo $description ?>" />
 <meta name="robots" content="index,follow" />
-<meta name="DC.Title" content="<?php echo html($page->title()) ?> | <?php echo html($site->title()) ?>" />
+<meta name="DC.Title" content="<?php echo $title ?>" />
 <meta name="DC.Creator" content="<?php echo html($site->author()) ?>" />
 <meta name="DC.Rights" content="<?php echo html($site->author()) ?>" />
 <meta name="DC.Publisher" content="<?php echo html($site->author()) ?>" />
 <meta name="DC.Description" content="<?php echo $description ?>" />
 <meta name="DC.Language" content="en" />
 
-<meta property="og:title" content="<?php echo html($page->title()) ?> | <?php echo html($site->title()) ?>" />
+<meta property="og:title" content="<?php echo $title ?>" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="<?php echo html($page->url()) ?>" />
 <meta property="og:image" content="<?php echo $image ?>" />
@@ -51,8 +57,12 @@ if ( ! $description = (string) $page->description()->kirbytext() ) {
 <meta property="og:author" content="<?php echo html($site->author()) ?>" />
 <meta property="og:publisher" content="<?php echo html($site->author()) ?>" />
 
-<meta itemprop="name" content="<?php echo html($page->title()) ?> | <?php echo html($site->title()) ?>">
+<meta itemprop="name" content="<?php echo $title ?>">
 <meta itemprop="description" content="<?php echo $description ?>">
+<meta itemprop="image" content="<?php echo $image ?>">
+<meta itemprop="author" content="<?php echo html($page->url()) ?>">
+<meta itemprop="url" content="<?php echo html($site->author()) ?>">
+
 
 <!-- Styles -->
 <?php echo css('/assets/styles/style.css');
@@ -78,6 +88,7 @@ endif ?>
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+
 </head>
 
 <body id="top" class="<?php echo $page->isHomePage() ? 'home' : 'site' ?>">
