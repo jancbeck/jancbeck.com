@@ -16,6 +16,11 @@ RewriteEngine on
 #
 RewriteBase /
 
+# rewrite www to non-www 
+# http://stackoverflow.com/a/1270281/844732
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
 # block text files in the content folder from being accessed directly
 RewriteRule ^content/(.*)\.(txt|md|mdown)$ error [R=301,L]
 
