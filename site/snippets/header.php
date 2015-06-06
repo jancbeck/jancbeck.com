@@ -105,6 +105,7 @@ endif ?>
 				<a href="skype://<?php echo html($site->skype()) ?>"><span class="icon-skype"></span> Skype</a>
 				<a href="https://dribbble.com/<?php echo html($site->dribbble()) ?>"><span class="icon-dribbble"></span> dribbble</a>
 			</small></p>
+			<a class="jump" href="#about">Read more about me <span class="icon-circle-down"></span></a>
 		<?php endif ?>
 
 		</section>
