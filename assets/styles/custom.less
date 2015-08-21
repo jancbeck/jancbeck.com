@@ -48,14 +48,11 @@ blockquote {
 }
 
 header {
-	color: white;
 	font-size: 150%;
-	background-color: #212A2D;
 	padding: 1rem;
 	box-sizing: border-box;
 	position: relative;
 	z-index: 1;
-	text-shadow: 0 1px 0px black;
 
 	.home & {
 		padding: 5rem 0rem;
@@ -64,10 +61,9 @@ header {
 
 	h1 {
 		margin-bottom: 1em;
-		text-transform: uppercase;
 		font-weight: normal;
 		a {
-			color: white;
+			color: #333;
 		}
 
 		.home & {
@@ -82,14 +78,14 @@ header {
 
 	p {
 		margin-bottom: 2em;
-		color: fade(white, 60%);
-	}
-	a {
-		color: fade(white, 60%);
-		&:hover, &:focus {
-			color: white;
+		color: fade(black, 60%);
+
+		.site &:first-of-type {
+			text-align: center;
+			margin-bottom: 0;
+			text-transform: uppercase;
+			font-size: .5em;
 		}
-		transition: color .5s;
 	}
 	small a {
 		text-transform: uppercase;
@@ -107,83 +103,23 @@ header {
 			display: inline-block;
 		}
 	}
-	[class^="icon-"], [class*=" icon-"] {
-		margin-right: .5em;
-		font-size: 150%;
-		vertical-align: text-bottom;
-	}
-	.jump {
-		text-align: center;
-		display: block;
-		-webkit-animation-duration: 1.5s;
-		animation-duration: 1.5s;
-		-webkit-animation-fill-mode: both;
-		animation-fill-mode: both;
-		-webkit-animation-iteration-count: infinite;
-		animation-iteration-count: infinite;
-		-webkit-animation-name: pulse;
-		animation-name: pulse;
-		
-		span {
-			display: block;
-		}
-	}
-}
-
-/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
-
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-    opacity: 0.5;
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.05, 1.05, 1.05);
-    transform: scale3d(1.05, 1.05, 1.05);
-    opacity: 1;
-  }
-
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-    opacity: 0.5;
-  }
-}
-
-@keyframes pulse {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-    opacity: 0.5;
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.05, 1.05, 1.05);
-    transform: scale3d(1.05, 1.05, 1.05);
-    opacity: 1;
-  }
-
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-    opacity: 0.5;
-  }
 }
 
 /* Larger than tablet */ 
 @media (min-width: 1000px) {
 	.home {
 		padding-left: 300px;
+		padding-top: 5vw;
 
 		header {
 			position: fixed;
 			width: 300px;
+			top: 0;
 			left: 0;
-		}
-		.jump {
-			display: none;
+
+			a[href="#about"] {
+				display: none;
+			}
 		}
 	}
 }

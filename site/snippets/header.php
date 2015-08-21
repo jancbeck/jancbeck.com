@@ -96,16 +96,16 @@ endif ?>
 	<header role="banner">
 		<section>
 			<h1><a title="go to homepage" href="<?php echo u('/') ?>"><?php echo html($site->title()) ?></a></h1>
+			<p><?php echo $site->description()->html() ?></p>
 
 		<?php if ( $page->isHomePage() ) : ?>
-			<p><?php echo $site->description()->html() ?></p>
 			<p><small>
 				<a href="mailto:<?php echo html($site->email()) ?>"><span class="icon-email"></span> E-Mail</a>
 				<a href="https://github.com/<?php echo html($site->github()) ?>"><span class="icon-github"></span> Github</a>
 				<a href="skype://<?php echo html($site->skype()) ?>"><span class="icon-skype"></span> Skype</a>
 				<a href="https://dribbble.com/<?php echo html($site->dribbble()) ?>"><span class="icon-dribbble"></span> dribbble</a>
 			</small></p>
-			<a class="jump" href="#about">Read more about me <span class="icon-circle-down"></span></a>
+			<p><a href="#about">Find out more.</a></p>
 		<?php endif ?>
 
 		</section>
