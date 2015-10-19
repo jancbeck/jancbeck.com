@@ -25,6 +25,13 @@ $title = $page->isHomePage() ? $site->title() . ' | '. $description : $page->tit
 <meta charset="utf-8" />
 <title><?php echo html( $title ) ?></title>
 
+<!-- Styles -->
+<?php echo css('/assets/styles/style.css');
+// page specific css
+if ( $stylesheet = $page->files()->find( $page->id(). '.css' ) ) :
+	echo css( $stylesheet->url() );
+endif ?>
+
 <meta name="apple-mobile-web-app-title" content="<?php echo html($site->title()) ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
 
@@ -62,14 +69,6 @@ $title = $page->isHomePage() ? $site->title() . ' | '. $description : $page->tit
 <meta itemprop="image" content="<?php echo $image ?>">
 <meta itemprop="author" content="<?php echo html($page->url()) ?>">
 <meta itemprop="url" content="<?php echo html($site->author()) ?>">
-
-
-<!-- Styles -->
-<?php echo css('/assets/styles/style.css');
-// page specific css
-if ( $stylesheet = $page->files()->find( $page->id(). '.css' ) ) :
-	echo css( $stylesheet->url() );
-endif ?>
 
 <!-- Favicons -->
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
