@@ -3,4 +3,5 @@
 
 User-Agent: *
 Disallow: /drafts/
+Disallow: /cv/
 Sitemap: http://jancbeck.com/sitemap
