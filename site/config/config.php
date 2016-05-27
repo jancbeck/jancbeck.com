@@ -186,21 +186,3 @@ php errors there.
 
 c::set('debug', false);
 
-/*
-
-
----------------------------------------
-Languages
----------------------------------------
-
- */
-c::set('languages', array(
-  array(
-    'code'    => 'en',
-    'name'    => 'English',
-    'default' => true,
-    'locale'  => 'en_US',
-    'url'     => '/',
-  )
-));
-
