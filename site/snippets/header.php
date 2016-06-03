@@ -41,7 +41,7 @@ endif ?>
 <!-- Feed -->
 <link rel="alternate" type="application/rss+xml" href="<?php echo url('feed') ?>" title="Feed | <?php echo html($site->title()) ?>" />
 
-<link rel="canonical" href="//<?php echo $site->canonical_domain() ?>/<?php echo $page->isHomePage() ? '' : $page->uri() ?>" />
+<link rel="canonical" href="<?php echo url::scheme() ?>://<?php echo $site->canonical_domain() ?>/<?php echo $page->isHomePage() ? '' : $page->uri() ?>" />
 
 <meta name="title" content="<?php echo $title ?>" />
 <meta name="author" content="<?php echo html($site->author()) ?>" />
