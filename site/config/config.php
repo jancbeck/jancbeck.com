@@ -49,6 +49,7 @@ embedded flash videos from youtube or vimeo
 
 c::set('kirbytext.video.width', 900);
 c::set('kirbytext.video.height', 506);
+c::set('responsiveimages.defaultsource', 'large');
 
 
 /*
