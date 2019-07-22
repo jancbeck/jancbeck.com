@@ -95,7 +95,6 @@ endif ?>
 	<header role="banner">
 		<section>
 			<h1><a title="go to homepage" href="<?php echo u('/') ?>"><?php echo html($site->title()) ?></a></h1>
-			<p><?php echo $site->description()->html() ?></p>
 
 		<?php if ( $page->isHomePage() ) : ?>
 			<p><small>
