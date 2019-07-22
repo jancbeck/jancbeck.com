@@ -99,10 +99,18 @@ endif ?>
 
 		<?php if ( $page->isHomePage() ) : ?>
 			<p><small>
-				<a href="mailto:<?php echo html($site->email()) ?>"><span class="icon-email"></span> E-Mail</a>
-				<a href="https://github.com/<?php echo html($site->github()) ?>"><span class="icon-github"></span> Github</a>
-				<a href="skype://<?php echo html($site->skype()) ?>"><span class="icon-skype"></span> Skype</a>
-				<a href="https://dribbble.com/<?php echo html($site->dribbble()) ?>"><span class="icon-dribbble"></span> dribbble</a>
+				<?php if (!empty( $site->email() )): ?>
+					<a href="mailto:<?php echo html($site->email()) ?>"><span class="icon-email"></span> E-Mail</a>
+				<?php endif ?>
+				<?php if (!empty( $site->github() )): ?>
+					<a href="https://github.com/<?php echo html($site->github()) ?>"><span class="icon-github"></span> Github</a>
+				<?php endif ?>
+				<?php if (!empty( $site->skype() )): ?>
+					<a href="skype://<?php echo html($site->skype()) ?>"><span class="icon-skype"></span> Skype</a>
+				<?php endif ?>
+				<?php if (!empty( $site->dribbble() )): ?>
+					<a href="https://dribbble.com/<?php echo html($site->dribbble()) ?>"><span class="icon-dribbble"></span> dribbble</a>
+				<?php endif ?>
 			</small></p>
 			<p><a href="#about">Find out more.</a></p>
 		<?php endif ?>
