@@ -14,4 +14,3 @@
 	Standards: HTML, CSS
 	Doctype: HTML5
 	Language: english
-	Powered by: http://getkirby.com/

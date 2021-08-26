@@ -1,231 +1,26 @@
+@link-color: #0FA0CE;
+html {
+  background: #F5F5F5;
+}
 body {
-	background-color: #F5F5F5;
-	font-size: 1.85em;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 2em 2em 1em;
+  background: white;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, .1);
 }
-
-.container {
-	max-width: 1280px;
+[class^="icon-"], [class*=" icon-"] {
+  width: 1em;
+  height: 1em;
 }
-
-a {
-    color: #1787A9;
-    word-break: break-word;
-    text-decoration: none;
-    &:hover, &:focus {
-	    color: #1EAEDB;
-	}
+.icon-linkedin {
+  position: relative;
+  bottom: -3px;
+  margin-left: 5px;
+  svg {
+    color: #0a66c2 !important;
+  }
 }
-
-b, strong {
-	font-weight: 600;
-}
-
-h2 {
-	@media (min-width: 550px) {
-		font-size: 3.5rem;
-	}
-	font-size: 3.2rem;
-}
-h3 {
-	font-size: 2rem;
-
-	@media (min-width: 550px) {
-		font-size: 2.5rem;
-	}
-}
-h6 {
-	border-bottom: 1px solid #eee;
-	font-style: normal;
-	padding-bottom: 1.5em;
-	color: #888;
-	font-weight: normal;
-}
-
-blockquote {
-	border-left: .3em solid #eee;
-	padding-left: 1em;
-	margin-left: 0;
-}
-
-code {
-	white-space: pre-wrap;
-	overflow: auto;
-}
-
-.list-unstyled {
-	list-style: none;
-}
-
-header {
-	font-size: 150%;
-	padding: 1rem;
-	box-sizing: border-box;
-	position: relative;
-	z-index: 1;
-
-	.home & {
-		padding: 5rem 0rem;
-		min-height: 100vh;
-	}
-
-	h1 {
-		margin-bottom: 1em;
-		font-weight: normal;
-		a {
-			color: #333;
-		}
-
-		.home & {
-			margin-top: 10vh;
-		}
-
-		.site & {
-			text-align: center;
-			margin-bottom: 0;
-		}
-	}
-
-	p {
-		margin-bottom: 2em;
-		color: fade(black, 60%);
-
-		.site &:first-of-type {
-			text-align: center;
-			margin-bottom: 0;
-			text-transform: uppercase;
-			font-size: .5em;
-		}
-	}
-	small a {
-		text-transform: uppercase;
-		font-weight: 600;
-		letter-spacing: .1em;
-		margin-right: 2em;
-		font-size: 80%;
-
-		@media (min-width: 1000px), (max-width: 850px) {
-			display: block;
-			margin-bottom: 1em;
-		}
-		@media (min-width: 450px) and (max-width: 850px) { 
-			width: 40%;
-			display: inline-block;
-		}
-	}
-}
-
-/* Larger than tablet */ 
-@media (min-width: 1000px) {
-	.home {
-		padding-left: 300px;
-
-		header {
-			position: absolute;
-			@media ( min-height: 700px) {
-				position: fixed;
-			}
-			width: 300px;
-			top: 0;
-			left: 0;
-
-			a[href="#about"] {
-				display: none;
-			}
-		}
-	}
-}
-
-section {
-
-	body > & {
-		background-color: white;
-		margin-top: -1px;
-		padding: 20px;
-		padding: 5vw 10vw;
-
-		/* Larger than tablet */
-		@media (max-width: 700px) {
-			width: 100%;
-		}
-	}
-	&:extend( .container all );
-
-	&:not(#projects) p:first-of-type {
-		font-size: 120%;
-	}
-
-	figure {
-		text-align: center;
-		margin: 2em -10vw;
-	}
-	figcaption {
-		font-style: italic;
-		color: #aaa;
-		margin-top: 1em;
-	}
-	footer {
-		border-bottom: 1px solid #eee;
-		padding-top: 2.5vw;
-		margin-bottom: 2.5vw;
-		padding-bottom: 2.5vw;
-	}
-}
-article a, #articles ul a {
-	text-decoration: underline;
-	
-	&:hover {
-		text-decoration: none;
-	}
-}
-
-footer {
-	text-align: center;
-	color: #888;
-	text-shadow: 0 1px 0px white;
-	margin-top: 1em;
-}
-
-img {
-	&:extend( .u-max-full-width all );
-	height: auto;
-}
-.error-site {
-	text-align: center;
-}
-
-.highlight br {
-	display: none;
-}
-
-/* Solarized (Dark) */
-// https://github.com/kpumuk/codecolorer
-
-.highlight .co0, .highlight .co1, .highlight .co2, .highlight .co3, .highlight .co4, .highlight .coMULTI
-	{ color: #97B8C3; }
-.highlight .nu0, .highlight .re3
-	{ color: #269186; }
-.highlight .st0, .highlight .st_h, .highlight .es0, .highlight .es1
-	{ color: #269186; }
-.highlight .me1, .highlight .me2
-	{ color: #748B00; }
-.highlight .kw1, .highlight .kw2, .highlight .sy1
-	{ color: #859900; }
-.highlight .kw3, .highlight .kw4, .highlight .kw5, .highlight .re2
-	{ color: #A57800; }
-.highlight .re0, .highlight .re1
-	{ color: #268BD2; }
-.highlight .br0,  .highlight .sy0
-	{ color: #D01F1E; }
-.xml .re1
-	{ color: #6E9CBE; }
-.xml .re0
-	{ color: #6D9CBE; }
-
-@media print {
-	body > section {
-		border: none;
-	}
-	footer {
-		display: none;
-	}
+a:hover, a:focus {
+  color: darken(@link-color, 20%);
 }
