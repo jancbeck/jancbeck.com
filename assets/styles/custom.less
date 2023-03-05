@@ -1,13 +1,25 @@
 @link-color: #0FA0CE;
 html {
-  background: #F5F5F5;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 body {
   max-width: 500px;
   margin: 20px auto;
   padding: 2em 2em 1em;
+  border-radius: 1em;
   background: white;
   box-shadow: 0 10px 50px rgba(0, 0, 0, .1);
+  text-align: center;
+}
+h1 {
+  text-align: center;
+  color: #7b9099;
+  font-weight: 800;
+  letter-spacing: .05em;
 }
 [class^="icon-"], [class*=" icon-"] {
   width: 1em;
@@ -17,10 +29,15 @@ body {
   position: relative;
   bottom: -3px;
   margin-left: 5px;
-  svg {
-    color: #0a66c2 !important;
-  }
+  fill: @link-color;
+}
+a {
+  text-decoration: none;
 }
 a:hover, a:focus {
   color: darken(@link-color, 20%);
+  text-decoration: none;
+  .icon-linkedin {
+    fill: darken(@link-color, 20%);
+  }
 }
