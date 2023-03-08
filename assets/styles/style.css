@@ -11,7 +11,6 @@ html {
     height: 100%;
 }
 body {
-    background: white;
     border-radius: 1em;
     border: .075em solid #1e4057;
     color: #1e4057;
@@ -62,4 +61,27 @@ p {
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    background: #0d1c26;
+  }
+  body {
+    color: #c2ced6;
+    border-color: #c2ced6;
+  }
+  a, a:active, a:visited {
+    color: #c2ced6;
+    border-bottom-color: #c2ced6;
+  }
+  a:hover, a:focus {
+    color: white;
+    border-bottom-color: white;
+  }
+  .icon-linkedin {
+      fill: #c2ced6;
+  }
+  a:hover .icon-linkedin, a:focus .icon-linkedin {
+    fill: white;
+}
 }
