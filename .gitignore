@@ -9,3 +9,4 @@ config.codekit
 github.php
 
 thumbs/*
+*.codekit3

@@ -9,16 +9,19 @@ html {
     min-height: 100%;
     padding: .5rem;
     height: 100%;
+    font-size: 5vmin;
+    font-size: clamp(.5em, 5vmin, 2rem);
 }
 body {
     border-radius: 1em;
     border: .075em solid #1e4057;
+    border-width: clamp(2px, .075em, 4px);
     color: #1e4057;
     font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 5vmin;
     font-weight: 400;
     line-height: 1.6;
     margin: 0 auto;
+    font-size: 1em;
     max-width: 18.35em;
     padding: 2em 2em 1em;
     text-align: center;
@@ -39,7 +42,7 @@ a, a:active, a:visited {
 }
 a:hover, a:focus {
     color: black;
-    border-bottom: .075em solid black;
+    border-bottom: .075em dotted black;
 }
 svg {
     width: 1em;
