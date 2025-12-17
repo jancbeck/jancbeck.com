@@ -3,7 +3,7 @@
 }
 html {
     align-items: center;
-    background: white;
+    background: whiteSmoke;
     display: flex;
     justify-content: center;
     min-height: 100%;
@@ -13,6 +13,7 @@ html {
     font-size: clamp(.5em, 5vmin, 2rem);
 }
 body {
+    background: white;
     border-radius: 1em;
     border: .075em solid #1e4057;
     border-width: clamp(2px, .075em, 4px);
